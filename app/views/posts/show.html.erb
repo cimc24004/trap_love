@@ -1,0 +1,21 @@
+<div class="yellow-background-box">
+  <div class="big-title-box-out-box">
+    <div class="text-center-box big-title-box">
+      <div class="post-show-description-box">
+        <h1 class="title-find-by-new-ai">最新のAI技術であなたの好きな人との相性を判断します。</h1>
+        <p class="post-show-description-text">遊びサーチ社が開発した最新のAI技術であなたの名前と</p>
+        <p class="post-show-description-text">好きな人の名前を答えるだけで瞬時に相性を判断します。 </p>
+      </div>
+    </div>
+  </div>
+  <div class="post-answer-form">
+    <%= form_with model: @post_answer, local: true, url: post_answers_path(post_random_id: params[:random_id]) do |f| %>
+      <div class="post-answer-field-box">
+        <%= f.label "あなたの名前" %><br>
+        <%= f.text_field :answerd_name, class: "answered_name_form" %><br>
+        <%= f.label "好きな人の名前" %><br>
+        <%= f.text_field :target_name,class: "target_name_form" %><br>
+        <%= f.submit "AIで判断！", class: "ai-find-button" %>
+      </div>
+    <% end %>
+</div>

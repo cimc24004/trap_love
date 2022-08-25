@@ -1,0 +1,26 @@
+<h2>こんにちは <%= @post.name %>さん</h2>
+<h3>このリンクを共有して好きな人の名前を知っちゃおう！</h3>
+<%= button_tag "リンクをコピー", id: "link-copy-btn" %>
+<%= text_field_tag "", request.url.gsub("answers", ""), id: "link-copy-area" %>
+<% @post.post_answers.each do |post_answer| %>
+  <p>
+    <%= post_answer.answerd_name %>の好きな人は
+    <%= post_answer.target_name %>です
+  </p>
+<% end %>
+
+<script>
+  var target_area = document.getElementById("link-copy-area");
+  document.getElementById("link-copy-btn").addEventListener("click", function(){
+    target_area.select();
+    document.execCommand("copy");
+
+  });
+
+  document.addEventListener("copy", function(e){
+    e.clipboardData.setData("text/plain", target_area.value);
+    e.preventDefault();
+    // document.removeEventListener("copy", );
+  });
+
+</script>

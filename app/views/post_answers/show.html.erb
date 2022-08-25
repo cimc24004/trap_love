@@ -1,0 +1,9 @@
+<div class="yellow-background-box">
+  <div class="love-video-with-text-box">
+    <div class="result-love-text-box">
+      <h1 class="big-trap-text">トラップに引っ掛かりましたね！！</h1>
+      <p>あなたの好きな人の名前は<%= @post_answer.post.name %>に送信されました！</p>
+    </div>
+    <%= video_tag "/videos/love.mp4", muted: true,autoplay: true,playsinline: true,loop: true, id: "love-video" %>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<%= link_to "Post New", new_post_path %>
+<% @posts.each do |post| %>
+  <%= link_to "#{post.name}が登録", post_path(post.random_id) %>
+<% end %>
