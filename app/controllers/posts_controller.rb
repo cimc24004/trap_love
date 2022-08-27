@@ -2,22 +2,28 @@ class PostsController < ApplicationController
   require "securerandom"
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   def create
     @post = Post.new(params_get)
     @post.random_id = SecureRandom.uuid
-    @post.save
+    if @post.save
+      redirect_to post_answers_path(@post.random_id)
+    else
+      @posts = Post.all
+      render "index", status: :unprocessable_entity
+    end
     session[:master_post_id] = @post.id
-    redirect_to post_answers_path(@post.random_id)
+
   end
 
-  def new
-    @post = Post.new
-  end
+
 
   def show
-    @post = Post.find_by(random_id: params[:random_id])
+    @random_id = params[:random_id]
+    @post = Post.find_by(random_id: @random_id)
+
     @post_answer = PostAnswer.new
   end
 

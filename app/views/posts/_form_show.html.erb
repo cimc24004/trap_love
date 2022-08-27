@@ -1,0 +1,19 @@
+<%= form_with model: @post_answer, local: true, url: post_answers_path(post_random_id: @random_id) do |f| %>
+  <% if @post_answer.errors.present? %>
+    <div class="error-box">
+      <% @post_answer.errors.full_messages.each do |message| %>
+        <li class="error-li-text"><%= message %></li>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="post-answer-field-box">
+    <div class="field"><%= f.label "あなたの名前" %></div>
+     <div class="field"><%= f.text_field :answerd_name, class: "answered_name_form" %>
+     </div>
+     <div class="field"><%= f.label "好きな人の名前" %>
+     <div class="field"><%= f.text_field :target_name,class: "target_name_form" %>
+     </div>
+     <div class="field"><%= f.submit "AIで判断！", class: "ai-find-button" %>
+     </div>
+  </div>
+<% end %>

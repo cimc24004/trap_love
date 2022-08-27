@@ -9,13 +9,9 @@
     </div>
   </div>
   <div class="post-answer-form">
-    <%= form_with model: @post_answer, local: true, url: post_answers_path(post_random_id: params[:random_id]) do |f| %>
-      <div class="post-answer-field-box">
-        <%= f.label "あなたの名前" %><br>
-        <%= f.text_field :answerd_name, class: "answered_name_form" %><br>
-        <%= f.label "好きな人の名前" %><br>
-        <%= f.text_field :target_name,class: "target_name_form" %><br>
-        <%= f.submit "AIで判断！", class: "ai-find-button" %>
-      </div>
-    <% end %>
-</div>
+    <%#= turbo_frame_tag "post-show-form" do %>
+      <%= render "posts/form_show" %>
+    <%# end %>
+  </div>
+<script>
+</script>

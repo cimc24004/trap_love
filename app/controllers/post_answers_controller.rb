@@ -12,8 +12,13 @@ class PostAnswersController < ApplicationController
   def create
     @post_answer = PostAnswer.new(create_params)
     @post_answer.post_id = Post.find_by(random_id: params[:post_random_id]).id
-    @post_answer.save
-    redirect_to post_answer_path(post_random_id: params[:post_random_id], id: @post_answer.id)
+    if @post_answer.save
+      redirect_to post_answer_path(post_random_id: params[:post_random_id], id: @post_answer.id)
+    else
+      @random_id = params[:post_random_id]
+      # render template: "posts/show"
+      render "posts/show", status: :unprocessable_entity
+    end
   end
   def show
     @post_answer = PostAnswer.find params[:id]

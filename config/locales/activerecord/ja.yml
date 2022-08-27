@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:
+      post_answer:
+        answerd_name: "あなたの名前"
+        target_name: "好きな人の名前"

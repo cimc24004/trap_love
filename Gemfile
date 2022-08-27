@@ -73,3 +73,4 @@ group :test do
 end
 
 gem "dartsass-rails", "~> 0.4.0"
+gem 'rails-i18n'
