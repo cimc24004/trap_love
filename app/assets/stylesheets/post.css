@@ -138,3 +138,35 @@
   font-size: 25px;
   text-align: center;
 }
+
+.registration-button-box-in-fake-site {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.registration-button {
+  font-size: 20px;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 1px 1px 3px #000;
+  background-color: rgb(153, 160, 76);
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.post-name-field {
+  height: 90%;
+  font-size: 20px;
+}
+
+.post-form-into-box {
+  display: flex;
+}
+
+.registration-button.post {
+  border-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

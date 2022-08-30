@@ -8,6 +8,10 @@
   </div>
   <div class="lark-create-box">
     <h2 class="lark-your-friends-text">あなたも友達をいたずらできる！</h2>
-    <%= link_to "登録する。", root_path %>
+    <div class="registration-button-box-in-fake-site">
+      <%= link_to  root_path do %>
+        <%= button_tag "登録する", class: "registration-button" %>
+      <% end %>
+    </div>
   </div>
 </div>

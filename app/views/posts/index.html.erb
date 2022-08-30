@@ -1,15 +1,10 @@
 
-<%#= turbo_frame_tag "post-index" do %>
-
-  <div class="yellow-background-box">
-    <div class="post-form-box">
-      <%#= turbo_frame_tag "post-index-form" do %>
-        <%= render "form_index" %>
-      <%# end %>
-    </div>
-
-    <% @posts.each do |post| %>
-      <%= link_to "#{post.name}が登録", post_path(post.random_id) %>
-    <% end %>
+<div class="yellow-background-box">
+  <div class="post-form-box">
+      <%= render "form_index" %>
   </div>
-<%# end %>
+
+  <% @posts.each do |post| %>
+    <%= link_to "#{post.name}が登録", post_path(post.random_id) %>
+  <% end %>
+</div>

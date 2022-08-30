@@ -1,9 +1,18 @@
-<% if @post.errors.present? %>
-  <% @post.errors.full_messages.each do |error| %>
-    <%= error %>
+<div class="post-form">
+  <% if @post.errors.present? %>
+    <% @post.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
   <% end %>
-<% end %>
-<%= form_with model: @post do |f| %>
-  <div><%= f.text_field :name %></div>
-  <%= f.submit "送信" %>
-<% end %>
+
+  <%= form_with model: @post do |f| %>
+    <div class="post-form-into-box">
+      <div class="field">
+        <%= f.text_field :name, class: "post-name-field" %>
+      </div>
+      <div class="field">
+        <%= f.submit "送信", class: "registration-button post" %>
+      </div>
+    </div>
+  <% end %>
+</div>
