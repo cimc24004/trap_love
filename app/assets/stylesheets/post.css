@@ -170,3 +170,83 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
+.answer-share-box {
+  max-width: 600px;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hello-name-text {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.know-share-text {
+  margin-bottom: 10px;
+}
+
+
+.link-copy-box {
+  display: flex;
+}
+
+.link-copy-box .ai-find-button {
+  width: 150px;
+  margin: 0;
+  font-size: 100%;
+  line-height: 25px;
+}
+
+.link-share-sns-box {
+  display: flex;
+  margin-top: 50px;
+}
+
+#link-copy-area {
+  width: 90%;
+}
+
+.twitter-share-box {
+  background-color: skyblue;
+
+}
+
+.facebook-share-box {
+  background-color: blue;
+}
+
+.link-share-sns-box a {
+  text-decoration: none;
+}
+
+.link-share-sns-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.line-share-box {
+  background-color: green;
+}
+
+.share-sns-box:hover {
+  opacity: 0.7;
+}
+
+.share-sns-box {
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+@media screen and (max-width: 480px) {
+  .link-copy-box .ai-find-button {
+    font-size: 12px;
+  }
+}

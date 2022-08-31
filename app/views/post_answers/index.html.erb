@@ -1,14 +1,39 @@
-<h2>こんにちは <%= @post.name %>さん</h2>
-<h3>このリンクを共有して好きな人の名前を知っちゃおう！</h3>
-<%= button_tag "リンクをコピー", id: "link-copy-btn" %>
-<%= text_field_tag "", request.url.gsub("answers", ""), id: "link-copy-area" %>
-<% @post.post_answers.each do |post_answer| %>
-  <p>
-    <%= post_answer.answerd_name %>の好きな人は
-    <%= post_answer.target_name %>です
-  </p>
-<% end %>
 
+<div class="yellow-background-box">
+  <div class="post-answers-box">
+    <% @post.post_answers.each do |post_answer| %>
+      <p>
+        <%= post_answer.answerd_name %>の好きな人は
+        <%= post_answer.target_name %>です
+      </p>
+    <% end %>
+  </div>
+  <div class="answer-share-box">
+    <h2 class="hello-name-text">こんにちは <%= @post.name %>さん</h2>
+    <h3 class="know-share-text">このリンクを共有して好きな人の名前を知っちゃおう！</h3>
+    <div class="link-copy-box">
+      <%= button_tag "リンクをコピー", id: "link-copy-btn", class: "ai-find-button" %>
+      <%= text_field_tag "", request.url.gsub("answers", ""), id: "link-copy-area" %>
+    </div>
+    <div class="link-share-sns-box">
+      <a href="https://twitter.com/share?url=<%= request.url.gsub("answers", "") %>&text=あなたの好きな人は誰？ あなたとあなたの好きな人の相性を最新AIで診断します。&hashtags=相性診断" target="_blank">
+        <div class="twitter-share-box share-sns-box">
+            Twitterでシェア
+        </div>
+      </a>
+      <a href="https://social-plugins.line.me/lineit/share?url=<%= request.url.gsub("answers", "") %>" target="_blank">
+        <div class="line-share-box share-sns-box">
+          LINEでシェア
+        </div>
+      </a>
+      <a href="http://www.facebook.com/share.php?u=<%= request.url.gsub("answers", "") %>" target="_blank">
+        <div class="facebook-share-box share-sns-box">
+          Facebookでシェアする
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
 <script>
   var target_area = document.getElementById("link-copy-area");
   document.getElementById("link-copy-btn").addEventListener("click", function(){
