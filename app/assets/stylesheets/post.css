@@ -50,7 +50,9 @@
   height: 100vh;
 }
 
-.post-form-box {}
+.field.post-name .field_with_errors {
+  height: 100%;
+}
 
 .post-show-description-text {
   margin-top: 3px;
@@ -126,6 +128,14 @@
   margin-top: 20px;
 }
 
+.post-form .error-box {
+  margin-bottom: 20px;
+}
+
+.post-form {
+  padding-top: 20px;
+}
+
 .error-li-text {
   padding-top: 5px;
 }
@@ -142,6 +152,7 @@
 .registration-button-box-in-fake-site {
   display: flex;
   justify-content: center;
+
   margin-top: 30px;
 }
 
@@ -156,13 +167,26 @@
   padding: 5px 10px;
 }
 
+.post-index-form-top-text {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 30px;
+}
+
 .post-name-field {
   height: 90%;
   font-size: 20px;
+  width: 100%;
 }
 
 .post-form-into-box {
   display: flex;
+  justify-content: center;
+}
+
+.post-form-into-box .post-name.field {
+  max-width: 500px;
+  flex: auto;
 }
 
 .registration-button.post {
@@ -209,12 +233,12 @@
 }
 
 .twitter-share-box {
-  background-color: skyblue;
+  background-color: #1DA1F2;
 
 }
 
 .facebook-share-box {
-  background-color: blue;
+  background-color: #3b5998;
 }
 
 .link-share-sns-box a {
@@ -228,7 +252,7 @@
 }
 
 .line-share-box {
-  background-color: green;
+  background-color: #228B22;
 }
 
 .share-sns-box:hover {
