@@ -6,3 +6,5 @@ ja:
       post_answer:
         answerd_name: "あなたの名前"
         target_name: "好きな人の名前"
+      post:
+        name: "あなたの名前"

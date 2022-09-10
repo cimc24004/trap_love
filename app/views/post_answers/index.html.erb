@@ -1,13 +1,5 @@
 
 <div class="yellow-background-box">
-  <div class="post-answers-box">
-    <% @post.post_answers.each do |post_answer| %>
-      <p>
-        <%= post_answer.answerd_name %>の好きな人は
-        <%= post_answer.target_name %>です
-      </p>
-    <% end %>
-  </div>
   <div class="answer-share-box">
     <h2 class="hello-name-text">こんにちは <%= @post.name %>さん</h2>
     <h3 class="know-share-text">このリンクを共有して好きな人の名前を知っちゃおう！</h3>
@@ -33,6 +25,27 @@
       </a>
     </div>
   </div>
+  <% post_answer_class =  @post.post_answers.exists? ? "" : "empty" %>
+  <%# if @post.post_answers.exists? %>
+    <div class="post-answers-box">
+      <table class="friends-like-table">
+        <tr>
+          <th class="friends-like-title-th">友達の名前</th>
+          <th class="friends-like-title-th">好きな人の名前</th>
+        </tr>
+          <% @post.post_answers.each do |post_answer| %>
+            <tr>
+              <td class="post-answer-table-td">
+                <%= post_answer.answerd_name %>
+              </td>
+              <td class="post-answer-table-td">
+                <%= post_answer.target_name %>
+              </td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+  <%# end %>
 </div>
 <script>
   var target_area = document.getElementById("link-copy-area");

@@ -23,7 +23,9 @@ class PostsController < ApplicationController
   def show
     @random_id = params[:random_id]
     @post = Post.find_by(random_id: @random_id)
-
+    if session[:master_post_id] == @post.id
+      redirect_to post_answers_path(post_random_id: @random_id)
+    end
     @post_answer = PostAnswer.new
   end
 
