@@ -138,6 +138,7 @@
 
 .error-li-text {
   padding-top: 5px;
+  margin-left: 10px;
 }
 
 .error-box.show {
@@ -205,10 +206,26 @@
   min-width: 450px;
   padding-top: 50px;
   opacity: 1;
-  position: relative;
 }
 
-.post-answers-box.empty::before {
+.post-answers-table-box {
+  position: relative;
+
+}
+
+.display-here-text {
+  text-align: center;
+  height: 0;
+  position: relative;
+  top: 10px;
+  display: none;
+}
+
+.display-here-text.empty {
+  display: block;
+}
+
+.post-answers-table-box.empty::before {
   content: "";
   background-color: #fff;
   width: 100%;
@@ -216,7 +233,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .post-answers-like-list-text {
@@ -241,7 +258,10 @@
   border: 1px solid rgb(108, 108, 108);
   padding: 10px 8px;
   background-color: rgb(153, 160, 76);
-  color: #eee
+  color: #eee;
+  width: 300px;
+  max-width: 300px;
+  text-align: center;
 }
 
 .registration-button.post {

@@ -26,8 +26,9 @@
     </div>
   </div>
   <% post_answer_class =  @post.post_answers.exists? ? "" : "empty" %>
-  <%# if @post.post_answers.exists? %>
-    <div class="post-answers-box">
+  <div class="post-answers-box">
+    <div class="post-answers-table-box <%= post_answer_class %>">
+      <h1 class="<%= post_answer_class %> display-here-text">友達の回答がありません</h1>
       <table class="friends-like-table">
         <tr>
           <th class="friends-like-title-th">友達の名前</th>
@@ -45,7 +46,7 @@
           <% end %>
       </table>
     </div>
-  <%# end %>
+  </div>
 </div>
 <script>
   var target_area = document.getElementById("link-copy-area");
