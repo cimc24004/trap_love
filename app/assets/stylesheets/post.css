@@ -11,12 +11,19 @@
   font-weight: bold;
   border: 1px solid rgb(127, 127, 127);
   background-color: rgb(153, 160, 76);
-  box-shadow: 3px 3px 5px rgb(60, 60, 60);
-  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgb(60, 60, 60);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   margin-top: 20px;
   display: flex;
   justify-content: center;
 
+}
+
+.already-registration-text {
+  color: rgb(141, 0, 0);
+  text-align: center;
+  padding-top: 20px;
 }
 
 .field_with_errors input {
@@ -47,7 +54,7 @@
 
 .yellow-background-box {
   background-color: rgb(221, 214, 172);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .field.post-name .field_with_errors {
@@ -168,6 +175,10 @@
   padding: 5px 10px;
 }
 
+.registration-button:hover {
+  opacity: 0.8;
+}
+
 .post-index-form-top-text {
   text-align: center;
   font-size: 23px;
@@ -205,6 +216,7 @@
   max-width: 450px;
   min-width: 450px;
   padding-top: 50px;
+  padding-bottom: 100px;
   opacity: 1;
 }
 
@@ -343,10 +355,16 @@
   color: #fff;
   font-weight: bold;
   padding: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
 }
 
+.link-share-button-out-box {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.ai-find-button:hover {
+  opacity: 0.8;
+}
 
 @media screen and (max-width: 480px) {
   .link-copy-box .ai-find-button {
@@ -360,5 +378,17 @@
   .post-answers-box {
     max-width: 100%;
     min-width: 0;
+  }
+
+  .post-form-into-box {
+    max-width: 300px;
+  }
+
+  .title-find-by-new-ai {
+    font-size: 20px;
+  }
+
+  .big-title-box {
+    padding: 10px;
   }
 }

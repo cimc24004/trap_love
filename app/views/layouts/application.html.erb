@@ -19,7 +19,15 @@
     <header>
       <nav>
         <li class="nav-menu">
-          <%= link_to "愛の器", root_path, class: "top-menu-link" %>
+          <div class="top-menu-title">
+              <%= link_to root_path, class: "top-menu-link" do %>
+                <div class="top-menu-link-box">
+                  <%= image_tag "tarot.png" %>
+                  <h1 class="best-love-maintitle-site-text">LOVEAI</h1>
+                </div>
+              <% end %>
+            <p class="best-love-subtitle-site-text">最強の恋愛占いサイト</p>
+          </div>
         </li>
       </nav>
     </header>

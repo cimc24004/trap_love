@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :session_check, only: [:create]
   require "securerandom"
   def index
     @posts = Post.all
@@ -33,5 +34,14 @@ class PostsController < ApplicationController
 
   def params_get
     params.require(:post).permit(:name)
+  end
+
+
+  def session_check
+    if session[:master_post_id].present?
+      @post = Post.find session[:master_post_id]
+      flash[:already_regstration] = "すでに登録されています。"
+      redirect_to post_answers_path(@post.random_id)
+    end
   end
 end

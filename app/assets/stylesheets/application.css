@@ -38,18 +38,44 @@ input[type="submit"] {
   list-style: none;
 }
 
+.top-menu-title {
+  display: flex;
+}
+
+.best-love-subtitle-site-text {
+  padding-top: 23px;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.top-menu-link-box {
+  display: flex;
+}
+
+.best-love-maintitle-site-text {
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
 
 header {
   padding: 20px;
-  height: 20px;
   background-color: rgb(203, 196, 123);
 }
 
 .top-menu-link {
   color: #000;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .yield-area {
   width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
 }

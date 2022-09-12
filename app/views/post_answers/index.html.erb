@@ -1,5 +1,6 @@
 
 <div class="yellow-background-box">
+  <p class="already-registration-text"><%= flash[:already_regstration] %></p>
   <div class="answer-share-box">
     <h2 class="hello-name-text">こんにちは <%= @post.name %>さん</h2>
     <h3 class="know-share-text">このリンクを共有して好きな人の名前を知っちゃおう！</h3>
@@ -8,21 +9,27 @@
       <%= text_field_tag "", request.url.gsub("answers", ""), id: "link-copy-area" %>
     </div>
     <div class="link-share-sns-box">
-      <a href="https://twitter.com/share?url=<%= request.url.gsub("answers", "") %>&text=あなたの好きな人は誰？ あなたとあなたの好きな人の相性を最新AIで診断します。&hashtags=相性診断" target="_blank">
-        <div class="twitter-share-box share-sns-box">
-            Twitterでシェア
-        </div>
-      </a>
-      <a href="https://social-plugins.line.me/lineit/share?url=<%= request.url.gsub("answers", "") %>" target="_blank">
-        <div class="line-share-box share-sns-box">
-          LINEでシェア
-        </div>
-      </a>
-      <a href="http://www.facebook.com/share.php?u=<%= request.url.gsub("answers", "") %>" target="_blank">
-        <div class="facebook-share-box share-sns-box">
-          Facebookでシェアする
-        </div>
-      </a>
+      <div class="link-share-button-out-box">
+        <a href="https://twitter.com/share?url=<%= request.url.gsub("answers", "") %>&text=あなたの好きな人は誰？ あなたとあなたの好きな人の相性を最新AIで診断します。&hashtags=相性診断" target="_blank">
+          <div class="twitter-share-box share-sns-box">
+              Twitterでシェア
+          </div>
+        </a>
+      </div>
+      <div class="link-share-button-out-box">
+        <a href="https://social-plugins.line.me/lineit/share?url=<%= request.url.gsub("answers", "") %>" target="_blank">
+          <div class="line-share-box share-sns-box">
+            LINEでシェア
+          </div>
+        </a>
+      </div>
+      <div class="link-share-button-out-box">
+        <a href="http://www.facebook.com/share.php?u=<%= request.url.gsub("answers", "") %>" target="_blank">
+          <div class="facebook-share-box share-sns-box">
+            Facebookでシェアする
+          </div>
+        </a>
+      </div>
     </div>
   </div>
   <% post_answer_class =  @post.post_answers.exists? ? "" : "empty" %>
