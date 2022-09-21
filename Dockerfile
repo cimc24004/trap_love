@@ -8,3 +8,4 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 WORKDIR /app
 COPY . /app
 RUN bundle install
+ENV RAILS_ENV=production
